@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-ARSIP KPU PROV.SULBAR</title>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#eaf1ff;
+      --muted:#b9c6e6;
+      --accent:#4f8cff;
+      --accent2:#22c55e;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(79,140,255,.35), transparent 60%),
+        radial-gradient(900px 600px at 80% 70%, rgba(34,197,94,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .wrap{
+      width:100%;
+      max-width:820px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      overflow:hidden;
+      position:relative;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;
+      background:rgba(79,140,255,.18);
+      border:1px solid rgba(79,140,255,.35);
+      font-weight:800;
+      color:#dbe8ff;
+    }
+    h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      letter-spacing:.2px;
+      line-height:1.2;
+    }
+    p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      margin-top:22px;
+    }
+    @media (max-width: 760px){
+      .grid{grid-template-columns:1fr}
+    }
+    .panel{
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.18);
+      border-radius:18px;
+      padding:18px;
+    }
+    .btns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    button,a.btn{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      border-radius:14px;
+      padding:12px 14px;
+      font-weight:700;
+      font-size:14px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      transition:transform .08s ease, opacity .15s ease;
+      user-select:none;
+    }
+    button:active,a.btn:active{transform:scale(.98)}
+    .primary{
+      background:linear-gradient(180deg, rgba(79,140,255,1), rgba(53,110,255,1));
+      color:white;
+    }
+    .secondary{
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+    .ok{
+      color:#a7f3d0;
+      font-weight:700;
+      font-size:13px;
+      margin-top:10px;
+    }
+    .tiny{
+      font-size:12px;
+      opacity:.9;
+      color:var(--muted);
+      margin-top:10px;
+    }
+    .footer{
+      margin-top:14px;
+      font-size:12px;
+      color:rgba(185,198,230,.8);
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    code{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:12px;
+      color:#cfe0ff;
+      word-break:break-all;
+    }
+    .pulse{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--accent2);
+      box-shadow:0 0 0 0 rgba(34,197,94,.6);
+      animation:pulse 1.6s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}
+      70%{box-shadow:0 0 0 14px rgba(34,197,94,0)}
+      100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="badge">
+        <div class="logo">EA</div>
+        <span>E-ARSIP • KPU PROV.SULBAR</span>
+      </div>
+
+      <h1>E-ARSIP KPU PROV.SULBAR</h1>
+      <p>
+        Portal akses cepat untuk membuka aplikasi E-ARSIP berbasis Google Apps Script.
+        Link ini stabil dan cocok untuk dibagikan ke pegawai.
+      </p>
+
+      <div class="grid">
+        <div class="panel">
+          <p><b>Masuk ke aplikasi:</b></p>
+
+          <div class="btns">
+            <a class="btn primary" id="btnOpen" href="#" rel="noopener">
+              🚀 Buka Aplikasi
+            </a>
+
+            <button class="secondary" id="btnCopy">
+              📋 Salin Link
+            </button>
+          </div>
+
+          <div class="ok" id="status"></div>
+          <div class="tiny">
+            Redirect otomatis dalam <b id="count">6</b> detik...
+          </div>
+        </div>
+
+        <div class="panel">
+          <p style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+            <span class="pulse"></span>
+            <b>Status</b>
+          </p>
+
+          <p class="tiny" style="margin-top:0">
+            Target aplikasi (GAS):
+          </p>
+          <code id="targetUrl"></code>
+
+          <div class="footer">
+            <span>© E-ARSIP • KPU PROV.SULBAR</span>
+            <span style="opacity:.85">Landing Page GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================
+    // KONFIGURASI
+    // =========================
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbx0nD0w3QkkKd8JOry_M8ckFvajomfZdomEHrQjRyt5F5aYX4-Q3JuS48NtxVYOBMss/exec";
+    const AUTO_REDIRECT_SECONDS = 6;
+
+    // =========================
+    // INIT
+    // =========================
+    const btnOpen = document.getElementById("btnOpen");
+    const btnCopy = document.getElementById("btnCopy");
+    const statusEl = document.getElementById("status");
+    const targetUrlEl = document.getElementById("targetUrl");
+    const countEl = document.getElementById("count");
+
+    targetUrlEl.textContent = GAS_URL;
+    btnOpen.href = GAS_URL;
+
+    // =========================
+    // COPY LINK
+    // =========================
+    btnCopy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(GAS_URL);
+        statusEl.textContent = "✅ Link berhasil disalin!";
+      } catch (e) {
+        statusEl.textContent = "❌ Gagal salin otomatis. Silakan salin manual.";
+      }
+      setTimeout(() => statusEl.textContent = "", 2500);
+    });
+
+    // =========================
+    // AUTO REDIRECT
+    // =========================
+    let s = AUTO_REDIRECT_SECONDS;
+    countEl.textContent = s;
+
+    const timer = setInterval(() => {
+      s--;
+      countEl.textContent = s;
+
+      if (s <= 0) {
+        clearInterval(timer);
+        window.location.href = GAS_URL;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
